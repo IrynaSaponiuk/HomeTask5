@@ -1,0 +1,45 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="SmokeSuite" parallel="tests">
+    <test name="tests.SmokeTestsChrome" parallel="methods" thread-count="3">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="tests.BathroomRadiatorsTest">
+                <methods>
+                    <include name="checkIfThereIsNullInCartAfterDeletingProducts"/>
+                </methods>
+            </class>
+            <class name="tests.SearchTest">
+                <methods>
+                    <include name="checkIfSearchTheWrongWordGivesProperText"/>
+                </methods>
+            </class>
+            <class name="tests.SideRadiatorsTest">
+                <methods>
+                    <include name="checkThatOrderBoxReorderAllTheProductsByIncreasingPrice"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="tests.SmokeTestsFirefox" parallel="methods" thread-count="3">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="tests.BathroomRadiatorsTest">
+                <methods>
+                    <include name="checkIfThereIsNullInCartAfterDeletingProducts"/>
+                </methods>
+            </class>
+            <class name="tests.SearchTest">
+                <methods>
+                    <include name="checkIfSearchTheWrongWordGivesProperText"/>
+                </methods>
+            </class>
+            <class name="tests.SideRadiatorsTest">
+                <methods>
+                    <include name="checkThatOrderBoxReorderAllTheProductsByIncreasingPrice"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
